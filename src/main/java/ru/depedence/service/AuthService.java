@@ -16,9 +16,11 @@ public class AuthService {
 
     public Company register(AuthUserRequest request) {
         Company company = new Company();
+
         company.setCompanyName(request.companyName());
         company.setEmail(request.email());
         company.setPassword(passwordEncoder.encode(request.password()));
+
         companyRepository.save(company);
         return company;
     }

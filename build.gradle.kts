@@ -45,6 +45,7 @@ dependencies {
 
     // lombok
     implementation("org.projectlombok:lombok:1.18.42")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.42")
 }
 
 tasks.test {
