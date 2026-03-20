@@ -3,7 +3,7 @@ package ru.depedence.entity.request;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record AuthUserRequest(
+public record RegisterRequest(
         @NotNull
         @NotBlank
         String companyName,

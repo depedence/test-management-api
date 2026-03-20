@@ -10,6 +10,7 @@ import org.jspecify.annotations.NullMarked;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import ru.depedence.entity.dto.CompanyDto;
 
 import java.util.Collection;
 import java.util.List;
@@ -54,5 +55,9 @@ public class Company implements UserDetails {
     @NullMarked
     public String getUsername() {
         return email;
+    }
+
+    public CompanyDto toDto() {
+        return new CompanyDto(companyName, email);
     }
 }

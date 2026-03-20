@@ -5,4 +5,6 @@ import ru.depedence.entity.Company;
 
 public interface CompanyRepository extends JpaRepository<Company, Integer> {
     Company findByEmail(String email);
+    boolean existsByCompanyName(String companyName);
+    boolean existsByEmail(String email);
 }
