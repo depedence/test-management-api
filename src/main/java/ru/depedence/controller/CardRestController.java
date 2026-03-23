@@ -9,6 +9,8 @@ import ru.depedence.entity.dto.request.UpdateCardRequest;
 import ru.depedence.entity.dto.response.MessageResponse;
 import ru.depedence.service.CardService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/card")
 @RequiredArgsConstructor
@@ -24,6 +26,11 @@ public class CardRestController {
     @GetMapping("/{id}")
     public CardDto getCard(@PathVariable int id) {
         return cardService.findById(id);
+    }
+
+    @GetMapping
+    public List<CardDto> getAllCards() {
+        return cardService.findAll();
     }
 
     @PutMapping("/{id}")

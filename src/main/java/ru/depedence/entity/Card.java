@@ -30,6 +30,10 @@ public class Card {
     @Column(name = "status")
     private CardStatus status;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id", nullable = false)
+    private Company company;
+
     public Card(String title, String content, CardStatus status) {
         this.title = title;
         this.content = content;
