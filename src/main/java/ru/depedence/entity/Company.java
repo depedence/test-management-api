@@ -58,6 +58,6 @@ public class Company implements UserDetails {
     }
 
     public CompanyDto toDto() {
-        return new CompanyDto(companyName, email);
+        return new CompanyDto(id, companyName, email);
     }
 }

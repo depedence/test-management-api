@@ -1,4 +1,4 @@
-package ru.depedence.entity.response;
+package ru.depedence.entity.dto.response;
 
 public record MessageResponse(
         String message

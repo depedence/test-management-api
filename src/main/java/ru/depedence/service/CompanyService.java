@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.depedence.entity.Company;
 import ru.depedence.entity.dto.CompanyDto;
-import ru.depedence.entity.request.EditCompanyRequest;
+import ru.depedence.entity.dto.request.EditCompanyRequest;
 import ru.depedence.repository.CompanyRepository;
 
 @Service

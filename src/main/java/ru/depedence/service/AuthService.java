@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.depedence.entity.Company;
-import ru.depedence.entity.request.RegisterRequest;
+import ru.depedence.entity.dto.request.RegisterRequest;
 import ru.depedence.repository.CompanyRepository;
 
 @Service

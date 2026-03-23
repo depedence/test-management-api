@@ -11,8 +11,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import ru.depedence.entity.Company;
-import ru.depedence.entity.request.RegisterRequest;
-import ru.depedence.entity.request.LoginRequest;
+import ru.depedence.entity.dto.request.RegisterRequest;
+import ru.depedence.entity.dto.request.LoginRequest;
 import ru.depedence.service.AuthService;
 
 import java.util.HashMap;

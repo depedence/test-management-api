@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.depedence.entity.dto.CompanyDto;
-import ru.depedence.entity.request.EditCompanyRequest;
-import ru.depedence.entity.response.MessageResponse;
+import ru.depedence.entity.dto.request.EditCompanyRequest;
+import ru.depedence.entity.dto.response.MessageResponse;
 import ru.depedence.service.CompanyService;
 
 @RestController
