@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import ru.depedence.entity.Company;
+import ru.depedence.entity.dto.CompanyDto;
 import ru.depedence.entity.dto.request.RegisterRequest;
 import ru.depedence.entity.dto.request.LoginRequest;
 import ru.depedence.service.AuthService;
@@ -28,6 +29,11 @@ public class AuthRestController {
     private final AuthService authService;
 
     private final AuthenticationManager authenticationManager;
+
+    @GetMapping("/me")
+    public CompanyDto me() {
+        return authService.me();
+    }
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request) {

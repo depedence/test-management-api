@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+
+<body>
+    <h1>Регистрация корпоративного аккаунта</h1>
+
+    <form data-auth="register" id="register-form" action="/api/auth/register">
+        <input class="companyName-input" name="companyName" placeholder="Компания" required>
+        <input class="email-input" name="email" type="email" placeholder="Email" required>
+        <input class="password-input" name="password" type="password" placeholder="Пароль" required>
+
+        <button type="submit">Создать аккаунт</button>
+        <a class="redirect-login-page" href="/login">Уже есть аккаунт</a>
+    </form>
+
+    <p id="message"></p>
+
+    <script src="/js/auth.js"></script>
+</body>
+
+</html>

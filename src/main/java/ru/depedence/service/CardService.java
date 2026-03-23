@@ -9,7 +9,7 @@ import ru.depedence.entity.Card;
 import ru.depedence.entity.Company;
 import ru.depedence.entity.dto.CardDto;
 import ru.depedence.entity.dto.request.CreateCardRequest;
-import ru.depedence.entity.dto.request.UpdateCardRequest;
+import ru.depedence.entity.dto.request.EditCardRequest;
 import ru.depedence.repository.CardRepository;
 
 import java.util.List;
@@ -53,7 +53,7 @@ public class CardService {
                 .stream().map(Card::toDto).toList();
     }
 
-    public void edit(int id, UpdateCardRequest request) {
+    public void edit(int id, EditCardRequest request) {
         int companyId = getCurrentCompany().getId();
         Card card = repository.findByIdAndCompanyId(id, companyId)
                 .orElseThrow(() -> new EntityNotFoundException("Card not found"));

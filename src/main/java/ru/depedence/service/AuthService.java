@@ -1,11 +1,15 @@
 package ru.depedence.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.depedence.entity.Company;
+import ru.depedence.entity.dto.CompanyDto;
 import ru.depedence.entity.dto.request.RegisterRequest;
 import ru.depedence.repository.CompanyRepository;
+
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -23,6 +27,15 @@ public class AuthService {
 
         companyRepository.save(company);
         return company;
+    }
+
+    public CompanyDto me() {
+        Company company = (Company) Objects.requireNonNull(SecurityContextHolder
+                .getContext()
+                .getAuthentication())
+                .getPrincipal();
+
+        return Objects.requireNonNull(company).toDto();
     }
 
 }

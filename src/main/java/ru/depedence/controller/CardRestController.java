@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.depedence.entity.dto.CardDto;
 import ru.depedence.entity.dto.request.CreateCardRequest;
-import ru.depedence.entity.dto.request.UpdateCardRequest;
+import ru.depedence.entity.dto.request.EditCardRequest;
 import ru.depedence.entity.dto.response.MessageResponse;
 import ru.depedence.service.CardService;
 
@@ -34,7 +34,7 @@ public class CardRestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<MessageResponse> editCard(@PathVariable int id, @RequestBody UpdateCardRequest request) {
+    public ResponseEntity<MessageResponse> editCard(@PathVariable int id, @RequestBody EditCardRequest request) {
         cardService.edit(id, request);
         return ResponseEntity.ok(new MessageResponse("Card successfully edited"));
     }

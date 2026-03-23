@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/board.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Test<span>Management</span></div>
+  <nav>
+    <a href="/" class="active">Главная</a>
+    <a href="/profile">Профиль</a>
+    <button class="btn-logout" onclick="logout()">Выход</button>
+  </nav>
+</header>
+
+<main>
+  <div class="board-header">
+    <h1 class="board-title">Канбан доска</h1>
+    <button class="btn-add" onclick="openCreate()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Добавить карточку
+    </button>
+  </div>
+
+  <div class="board">
+    <div class="column" data-col="BUG">
+      <div class="column-head">
+        <span class="col-dot"></span>
+        <span class="column-label">Bug</span>
+        <span class="col-count" id="count-BUG">0</span>
+      </div>
+      <div class="column-cards" id="col-BUG"></div>
+    </div>
+    <div class="column" data-col="FEATURE">
+      <div class="column-head">
+        <span class="col-dot"></span>
+        <span class="column-label">Feature</span>
+        <span class="col-count" id="count-FEATURE">0</span>
+      </div>
+      <div class="column-cards" id="col-FEATURE"></div>
+    </div>
+    <div class="column" data-col="TESTCASE">
+      <div class="column-head">
+        <span class="col-dot"></span>
+        <span class="column-label">Test Case</span>
+        <span class="col-count" id="count-TESTCASE">0</span>
+      </div>
+      <div class="column-cards" id="col-TESTCASE"></div>
+    </div>
+  </div>
+</main>
+
+<div class="overlay" id="overlay-form">
+  <div class="modal">
+    <button class="modal-close" onclick="closeAll()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <h2 id="form-title">Новая карточка</h2>
+    <div class="field">
+      <label>Заголовок</label>
+      <input id="f-title" placeholder="Название задачи" oninput="onFormInput()">
+    </div>
+    <div class="field">
+      <label>Описание</label>
+      <textarea id="f-content" placeholder="Подробное описание..." oninput="onFormInput()"></textarea>
+    </div>
+    <div class="field">
+      <label>Тип</label>
+      <select id="f-status" onchange="onFormInput()">
+        <option value="BUG">Bug</option>
+        <option value="FEATURE">Feature</option>
+        <option value="TESTCASE">Test Case</option>
+      </select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-danger" id="btn-delete" onclick="deleteCard()" style="display:none">Удалить</button>
+      <button class="btn btn-secondary" onclick="closeAll()">Отмена</button>
+      <button class="btn btn-primary" id="btn-submit" onclick="submitForm()">Создать</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+
+<script src="/js/board.js"></script>
+</body>
+</html>

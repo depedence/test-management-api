@@ -28,6 +28,7 @@ public class Card {
     private String content;
 
     @Column(name = "status")
+    @Enumerated(EnumType.STRING)
     private CardStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
