@@ -45,7 +45,7 @@ body::before {
   pointer-events: none;
 }
 
-.auth-page {
+.auth-ru.depedence.page {
   width: min(1040px, 100%);
   display: grid;
   grid-template-columns: minmax(260px, 0.92fr) minmax(340px, 1.08fr);
@@ -230,7 +230,7 @@ input:focus {
 }
 
 @media (max-width: 920px) {
-  .auth-page {
+  .auth-ru.depedence.page {
     grid-template-columns: 1fr;
   }
 
@@ -250,7 +250,7 @@ input:focus {
     padding: 10px;
   }
 
-  .auth-page {
+  .auth-ru.depedence.page {
     border-radius: 18px;
   }
 

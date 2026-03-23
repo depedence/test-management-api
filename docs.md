@@ -11,7 +11,7 @@
 {
 "id": 1,
 "title": "Login works",
-"steps": "1. Open page...",
+"steps": "1. Open ru.depedence.page...",
 "expectedResult": "User logged in",
 "priority": "HIGH"
 }

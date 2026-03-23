@@ -180,9 +180,9 @@ main {
     flex-shrink: 0;
 }
 
-.column[data-col="BUG"] .col-dot { background: var(--bug); }
-.column[data-col="FEATURE"] .col-dot { background: var(--feature); }
-.column[data-col="TESTCASE"] .col-dot { background: var(--testcase); }
+.column[ru.depedence.data-col="BUG"] .col-dot { background: var(--bug); }
+.column[ru.depedence.data-col="FEATURE"] .col-dot { background: var(--feature); }
+.column[ru.depedence.data-col="TESTCASE"] .col-dot { background: var(--testcase); }
 
 .column-label {
     font-size: 13px;
@@ -191,9 +191,9 @@ main {
     text-transform: uppercase;
 }
 
-.column[data-col="BUG"] .column-label { color: var(--bug); }
-.column[data-col="FEATURE"] .column-label { color: var(--feature); }
-.column[data-col="TESTCASE"] .column-label { color: var(--testcase); }
+.column[ru.depedence.data-col="BUG"] .column-label { color: var(--bug); }
+.column[ru.depedence.data-col="FEATURE"] .column-label { color: var(--feature); }
+.column[ru.depedence.data-col="TESTCASE"] .column-label { color: var(--testcase); }
 
 .col-count {
     margin-left: auto;
